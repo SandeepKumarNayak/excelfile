@@ -28,6 +28,8 @@ app.post('/upload', upload.single('file'), (req, res) => {
     // Read the Excel file
     const workbook = XLSX.readFile(filePath);
     const sheetName = workbook.SheetNames[0];
+
+ // for reading the tabs change index of the sheetNames
     const sheet = workbook.Sheets[sheetName];
   
     // Convert the sheet data to JSON
